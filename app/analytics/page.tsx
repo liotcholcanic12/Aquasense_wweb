@@ -107,7 +107,7 @@ export default function AnalyticsPage() {
             <div className="flex items-center space-x-3 cursor-pointer" onClick={() => (window.location.href = "/")}>
               <Droplets className="h-8 w-8 text-blue-600" />
               <div>
-                <h1 className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">AquaMonitor</h1>
+                <h1 className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">AquaSense</h1>
                 <p className="text-sm text-gray-600">Real-time Water Quality Monitoring</p>
               </div>
             </div>
@@ -150,16 +150,7 @@ export default function AnalyticsPage() {
             <h1 className="text-3xl font-bold text-gray-900">Water Quality Analytics</h1>
             <p className="text-gray-600 mt-2">Real-time monitoring and historical data analysis</p>
           </div>
-          <div className="flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              <Download className="h-4 w-4 mr-2" />
-              Export Data
-            </Button>
-            <Button variant="outline" size="sm">
-              <RefreshCw className="h-4 w-4 mr-2" />
-              Refresh
-            </Button>
-          </div>
+
         </div>
 
         {/* Real-time Metrics */}
@@ -212,8 +203,8 @@ export default function AnalyticsPage() {
               <CardContent>
                 <div className="text-2xl font-bold">{currentData.tds} ppm</div>
                 <div className="flex items-center space-x-2 mt-2">
-                  <Badge className={`${getStatusColor("tds", Number.parseInt(currentData.tds))} text-white`}>
-                    {getStatusText("tds", Number.parseInt(currentData.tds))}
+                  <Badge className={`${getStatusColor("tds", Number.parseInt(currentData.tds.toString()))} text-white`}>
+                    {getStatusText("tds", Number.parseInt(currentData.tds.toString()))}
                   </Badge>
                 </div>
                 <p className="text-xs text-muted-foreground mt-2">Good: {"<"}300 ppm</p>
